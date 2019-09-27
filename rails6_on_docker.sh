@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#[参考記事]
+#丁寧すぎるDocker-composeによるrails + MySQL on Dockerの環境構築(Docker for Mac)
+#https://qiita.com/azul915/items/5b7063cbc80192343fc0
+
 #config setting#############
 MYSQL_PASSWORD="hogehoge"
 ###########################
