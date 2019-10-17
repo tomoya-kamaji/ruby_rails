@@ -4,6 +4,8 @@
 #丁寧すぎるDocker-composeによるrails + MySQL on Dockerの環境構築(Docker for Mac)
 #https://qiita.com/azul915/items/5b7063cbc80192343fc0
 
+# webpackerのインストールがDockerfileの中にあるとうまくいかなかったので、外に出した。
+
 #config setting#############
 MYSQL_PASSWORD="hogehoge"
 ###########################
@@ -46,6 +48,7 @@ RUN gem uninstall yarn -aIx
 
 #webpackerの設定
 RUN rails webpacker:install
+#RUN rails webpacker:install
 EOF
 
 echo "make Gemfile"
@@ -84,6 +87,9 @@ EOF
 
 echo "docker-compose run web rails new . --force --database=mysql --skip-bundle"
 docker-compose run web rails new . --force --database=mysql --skip-bundle
+
+echo "docker-compose run web rails webpacker:install"
+docker-compose run web rails webpacker:install
 
 docker-compose build
 
