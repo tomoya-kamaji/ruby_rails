@@ -1,0 +1,8 @@
+<h3>投稿ページ</h3>
+<%= link_to 'トップページ', '/' %>
+
+<%= form_with(model: @memo, local: true) do |f| %>
+  <%= f.label :メモ %>
+  <%= f.text_area :content %>
+  <%= f.submit "送信" %>
+<% end %>

@@ -1,0 +1,10 @@
+<h1>Memo app</h1>
+<% @memos.each do |memo| %>
+<ul>
+  <li>
+    <%= memo.content %>
+    <%= link_to '編集', edit_memo_path(memo) %>
+  </li>
+</ul>
+<% end %>
+<%= link_to '新規投稿', new_memo_path %>
