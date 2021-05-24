@@ -1,0 +1,11 @@
+<h1>編集ページ</h1>
+
+<%= @memo.content %>
+
+<%= form_for(@memo, url: memo_path(@memo)) do |f| %>
+<div>
+  <%= f.label :コンテンツ %><br>
+  <%= f.text_area :content %>
+</div>
+<div><%= f.submit "更新する" %></div>
+<% end %>
